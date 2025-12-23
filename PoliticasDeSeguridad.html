@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Seguridad - SCIS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-principal: #007c85;
+            --dorado: #c79e2e;
+            --gris-claro: #f5f5f5;
+            --blanco: #ffffff;
+            --gris-oscuro: #333333;
+            --texto-oscuro: #333333;
+            --texto-claro: #ffffff;
+            --gris-medio: #e0e0e0;
+            --sombra: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--azul-principal);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--blanco);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px var(--sombra);
+            border-bottom: 5px solid var(--dorado);
+        }
+
+        .header-logo {
+            max-width: 170px;
+            margin: 0 auto 20px;
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .header h1 {
+            color: var(--azul-principal);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: var(--dorado);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .header-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Índice */
+        .indice-container {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px var(--sombra);
+            border-left: 4px solid var(--dorado);
+        }
+
+        .indice-title {
+            color: var(--azul-principal);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--gris-medio);
+            padding-bottom: 10px;
+        }
+
+        .indice-list {
+            list-style-type: none;
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .indice-item {
+            margin-bottom: 12px;
+            break-inside: avoid;
+        }
+
+        .indice-link {
+            color: var(--azul-principal);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .indice-link:hover {
+            color: var(--dorado);
+            border-bottom: 1px solid var(--dorado);
+            padding-left: 5px;
+        }
+
+        .indice-number {
+            background-color: var(--azul-principal);
+            color: var(--texto-claro);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Contenido principal */
+        .content-section {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px var(--sombra);
+            transition: transform 0.3s ease;
+            border-top: 3px solid var(--dorado);
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: var(--azul-principal);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gris-medio);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-number {
+            background-color: var(--azul-principal);
+            color: var(--texto-claro);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: 600;
+        }
+
+        .section-content {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-content li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+            text-align: justify;
+        }
+
+        .section-content li:before {
+            content: "•";
+            color: var(--dorado);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Botones y elementos destacados */
+        .btn {
+            display: inline-block;
+            background-color: var(--azul-principal);
+            color: var(--texto-claro);
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            background-color: #00666d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--dorado);
+        }
+
+        .btn-secondary:hover {
+            background-color: #b38c26;
+        }
+
+        .alert-box {
+            background-color: #fff9e6;
+            border-left: 4px solid var(--dorado);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .alert-box.warning {
+            background-color: #fff3e6;
+            border-left-color: #ff9800;
+        }
+
+        .alert-box.success {
+            background-color: #e6f7e6;
+            border-left-color: #4caf50;
+        }
+
+        .alert-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: var(--azul-principal);
+        }
+
+        /* Tablas */
+        .contact-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px var(--sombra);
+        }
+
+        .contact-table th {
+            background-color: var(--azul-principal);
+            color: var(--texto-claro);
+            padding: 15px;
+            text-align: left;
+        }
+
+        .contact-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--gris-medio);
+            background-color: var(--blanco);
+        }
+
+        .contact-table tr:hover td {
+            background-color: var(--gris-claro);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--gris-oscuro);
+            color: var(--texto-claro);
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: var(--texto-claro);
+        }
+
+        .footer-links {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--texto-claro);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .indice-list {
+                columns: 1;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 20px 0;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-section {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .content-section:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+
+        .content-section:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-logo">
+                <img src="https://scis.com.ar/assets/logo-scis-BTCor7wg.png" alt="SCIS Logo">
+            </div>
+            <h1>Política de Seguridad</h1>
+            <div class="header-subtitle">SCIS Medicina Privada</div>
+            <div class="header-date"></div>
+        </div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="container">
+        <!-- Alerta inicial -->
+        <div class="alert-box">
+            <div class="alert-title">ℹ️ Información Importante</div>
+            <p>Esta Política de Seguridad describe los compromisos y medidas que SCIS Medicina Privada implementa para garantizar la protección de los datos y la seguridad de nuestros usuarios en la aplicación móvil.</p>
+        </div>
+
+        <!-- Índice -->
+        <section class="indice-container">
+            <h2 class="indice-title">Índice de Contenidos</h2>
+            <ul class="indice-list">
+                <li class="indice-item"><a href="#seccion1" class="indice-link"><span class="indice-number">1</span> Protección y Gestión de Datos del Usuario</a></li>
+                <li class="indice-item"><a href="#seccion2" class="indice-link"><span class="indice-number">2</span> Comunicaciones Seguras y Protección de Red</a></li>
+                <li class="indice-item"><a href="#seccion3" class="indice-link"><span class="indice-number">3</span> Prevención de Malware y Riesgos de Seguridad</a></li>
+                <li class="indice-item"><a href="#seccion4" class="indice-link"><span class="indice-number">4</span> Actualizaciones y Mantenimiento</a></li>
+                <li class="indice-item"><a href="#seccion5" class="indice-link"><span class="indice-number">5</span> Transparencia y Control de Privacidad</a></li>
+                <li class="indice-item"><a href="#seccion6" class="indice-link"><span class="indice-number">6</span> Seguridad de Acceso y Autenticación</a></li>
+                <li class="indice-item"><a href="#seccion7" class="indice-link"><span class="indice-number">7</span> Cumplimiento Legal y Normativo</a></li>
+                <li class="indice-item"><a href="#seccion8" class="indice-link"><span class="indice-number">8</span> Responsabilidad y Revisión Continua</a></li>
+            </ul>
+        </section>
+
+        <!-- Sección 1 -->
+        <section id="seccion1" class="content-section">
+            <h2 class="section-title"><span class="section-number">1</span> Protección y Gestión de Datos del Usuario</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Recopilación y Uso de Datos:</strong> SCIS Medicina Privada se compromete a recopilar y utilizar los datos del usuario de manera ética y legal, limitando la recopilación de datos al mínimo necesario para ofrecer servicios de calidad. Los datos personales se obtendrán con el consentimiento explícito del usuario y se utilizarán exclusivamente para los fines indicados en la política de privacidad.</li>
+                    <li><strong>Seguridad de Datos:</strong> La aplicación empleará métodos de almacenamiento seguro y cifrado para proteger los datos del usuario almacenados en el dispositivo y en los servidores.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2 -->
+        <section id="seccion2" class="content-section">
+            <h2 class="section-title"><span class="section-number">2</span> Comunicaciones Seguras y Protección de Red</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Conexiones Seguras:</strong> Todas las comunicaciones entre la aplicación y nuestros servidores se realizarán a través de protocolos de seguridad como HTTPS, garantizando la integridad y confidencialidad de los datos transmitidos.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 3 -->
+        <section id="seccion3" class="content-section">
+            <h2 class="section-title"><span class="section-number">3</span> Prevención de Malware y Riesgos de Seguridad</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Protección contra Malware:</strong> SCIS Medicina Privada se compromete a mantener la aplicación libre de malware, virus y actividades maliciosas que puedan poner en riesgo la seguridad del dispositivo del usuario.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 4 -->
+        <section id="seccion4" class="content-section">
+            <h2 class="section-title"><span class="section-number">4</span> Actualizaciones y Mantenimiento</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Parches y Actualizaciones de Seguridad:</strong> Nos comprometemos a proporcionar actualizaciones periódicas de la aplicación para corregir vulnerabilidades de seguridad conocidas y mantener la aplicación segura y actualizada.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 5 -->
+        <section id="seccion5" class="content-section">
+            <h2 class="section-title"><span class="section-number">5</span> Transparencia y Control de Privacidad</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Política de Privacidad Detallada:</strong> Se ofrecerá una política de privacidad clara, accesible y fácil de entender para los usuarios, explicando de manera detallada cómo se recopilan, utilizan y protegen los datos personales.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 6 -->
+        <section id="seccion6" class="content-section">
+            <h2 class="section-title"><span class="section-number">6</span> Seguridad de Acceso y Autenticación</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Acceso y Autorización Seguros:</strong> Implementaremos medidas robustas de autenticación y control de acceso para proteger las funciones y datos sensibles de la aplicación.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 7 -->
+        <section id="seccion7" class="content-section">
+            <h2 class="section-title"><span class="section-number">7</span> Cumplimiento Legal y Normativo</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Cumplimiento Legal:</strong> SCIS Medicina Privada cumplirá con todas las leyes y regulaciones de privacidad de datos pertinentes en las áreas donde se distribuye la aplicación.</li>
+                    <li><strong>Adherencia a las Políticas de Google Play Store:</strong> Además, nos comprometemos a seguir todas las políticas y pautas de seguridad establecidas por Google Play Store para garantizar una experiencia segura para nuestros usuarios.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 8 -->
+        <section id="seccion8" class="content-section">
+            <h2 class="section-title"><span class="section-number">8</span> Responsabilidad y Revisión Continua</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Revisión Periódica:</strong> La seguridad de la aplicación se revisará y mejorará continuamente para garantizar la protección y privacidad óptimas de los usuarios.</li>
+                </ul>
+                
+                <div class="alert-box success">
+                    <div class="alert-title">✅ Compromiso de Seguridad</div>
+                    <p>SCIS Medicina Privada se compromete a mantener los más altos estándares de seguridad para proteger la información y privacidad de nuestros usuarios.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-links">
+                        <li><strong>Protección de Datos:</strong> info@scis.com.ar</li>
+                        <li><strong>Atención al Afiliado:</strong> (11) 5246-1600</li>
+                        <li><strong>Dirección:</strong> Av Pueyrredon 1777, CABA</li>
+                        <li><strong>Horario:</strong> Lunes a Viernes 9 a 18hs</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Ejercicio de Derechos</h3>
+                    <ul class="footer-links">
+                        <li>En cumplimiento de lo dispuesto en la Protección de Datos, para el ejercicio de sus derechos de acceso, rectificación, cancelación y oposición al tratamiento de sus datos personales, contenidos en nuestras condiciones de protección de datos, solamente tiene que responder a este e-mail indicando su email en el asunto, o bien a través del envío de un correo ordinario a la dirección: info@scis.com.ar.</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 SCIS - Medicina Privada. Todos los derechos reservados.</p>
+                <p>Superintendencia de Servicios de Salud - Órgano de Control - 0800-222-SALUD (72583) - www.sssalud.gob.ar</p>
+                <p style="margin-top: 15px; font-size: 0.8rem;"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para los enlaces del índice
+        document.querySelectorAll('.indice-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+                
+                // Resaltar la sección a la que se navegó
+                targetElement.style.backgroundColor = '#f9f9f9';
+                setTimeout(() => {
+                    targetElement.style.backgroundColor = '';
+                }, 2000);
+            });
+        });
+        
+        // Detectar la sección actual mientras se desplaza
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    // Actualizar el enlace activo en el índice
+                    const sectionId = section.getAttribute('id');
+                    const correspondingLink = document.querySelector(`.indice-link[href="#${sectionId}"]`);
+                    
+                    document.querySelectorAll('.indice-link').forEach(link => {
+                        link.style.fontWeight = 'normal';
+                        link.style.color = '';
+                    });
+                    
+                    if (correspondingLink) {
+                        correspondingLink.style.fontWeight = '600';
+                        correspondingLink.style.color = '#c79e2e';
+                    }
+                }
+            });
+        });
+        
+        // Botón para volver arriba
+        const backToTopButton = document.createElement('button');
+        backToTopButton.innerHTML = '↑';
+        backToTopButton.style.position = 'fixed';
+        backToTopButton.style.bottom = '20px';
+        backToTopButton.style.right = '20px';
+        backToTopButton.style.backgroundColor = '#007c85';
+        backToTopButton.style.color = 'white';
+        backToTopButton.style.width = '50px';
+        backToTopButton.style.height = '50px';
+        backToTopButton.style.borderRadius = '50%';
+        backToTopButton.style.border = 'none';
+        backToTopButton.style.cursor = 'pointer';
+        backToTopButton.style.fontSize = '24px';
+        backToTopButton.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+        backToTopButton.style.display = 'none';
+        backToTopButton.style.zIndex = '1000';
+        backToTopButton.style.transition = 'all 0.3s ease';
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        backToTopButton.addEventListener('mouseenter', () => {
+            backToTopButton.style.backgroundColor = '#c79e2e';
+            backToTopButton.style.transform = 'scale(1.1)';
+        });
+        
+        backToTopButton.addEventListener('mouseleave', () => {
+            backToTopButton.style.backgroundColor = '#007c85';
+            backToTopButton.style.transform = 'scale(1)';
+        });
+        
+        document.body.appendChild(backToTopButton);
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        // Simular funcionalidad de los botones
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (!this.getAttribute('href') || this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('Esta funcionalidad está deshabilitada en esta demostración. En un entorno real, este botón realizaría la acción correspondiente.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
